@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Push to dockerhub') {
             steps {
-                sh 'docker push liatrio/new-alpine:2.101'
+                sh 'docker push swamiwaghmare/docker-repo:2.101'
             }
         }
     }

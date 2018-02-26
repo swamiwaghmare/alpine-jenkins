@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'docker build -t docker/jenkins-alpine:1.1 .'
+                sh 'docker build -t docker/jenkins:2.101-alpine .'
             }
         }
         stage('Push to dockerhub') {

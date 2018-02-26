@@ -15,7 +15,6 @@ pipeline {
             withCredentials([usernamePassword(credentialsId: 'dockerHub', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
           sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
           sh 'docker push swamiwaghmare/jenkins-alpine:2.101'
-          sh 'docker push swamiwaghmare/jenkins-alpine:2.101'
             }
         }
     }

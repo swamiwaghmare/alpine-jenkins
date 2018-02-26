@@ -3,7 +3,7 @@ pipeline {
      stages {
         stage('Build') {
             steps {
-                sh 'build -t swamiwaghmare/jenkins-alpine:2.101 .'
+                sh 'docker build -t swamiwaghmare/jenkins-alpine:2.101 .'
             }
         }
         stage('Push to dockerhub') {

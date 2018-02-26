@@ -1,20 +1,16 @@
 pipeline {
     agent any
-    stages {
+     stages {
         stage('Build') {
             steps {
-                sh 'docker build -t swmiwaghmare/jenkins:2.101 .'
+                sh 'docker build -t liatrio/jenkins-alpine:2.101 .'
             }
         }
         stage('Push to dockerhub') {
-	 agent any
-         steps {
-          withCredentials([usernamePassword(credentialsId: 'dockerHub', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
-          sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
-          sh 'docker push swamiwaghmare/jenkins-alpine:2.101'		
-          
+            steps {
+                sh 'docker push liatrio/jenkins-alpine:2.101'
             }
         }
     }
 }
-}
+
